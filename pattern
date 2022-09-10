@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.Scanner;
+public class PatternQuestions {
+
+	public static void main(String[] args) {
+
+Scanner sc=new Scanner(System.in);
+		System.out.print("Enter User:");
+		int n=sc.nextInt();
+		int space=0,num=0,dec=1,num1=0;
+		for(int i=1;i<n*2;i++)
+		{
+			if(num<n)
+			{
+				for(int j=1;j<=space;j++)
+					System.out.print(" ");
+				System.out.print(i);
+				if(space!=n-1)
+					space++;
+				else	
+					space--;
+			}
+			
+			if(i>n)
+			{
+				num1=n-dec;
+				for(int m=1;m<=space;m++)
+					System.out.print(" ");
+				System.out.print(num1);
+				dec++;
+				space--;
+			}
+			num++;
+			System.out.println();
+		}
+	}
+}
