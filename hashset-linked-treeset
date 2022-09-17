@@ -1,0 +1,61 @@
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class collectionlist {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		HashSet h=new HashSet();
+		h.add("B");
+		h.add("C");
+		h.add("D");
+		h.add("Z");
+		h.add(null);
+		h.add(10);
+		System.out.println(h.add("Z"));
+		System.out.println(h);
+		
+		LinkedHashSet h=new LinkedHashSet();
+		h.add("B");
+		h.add("C");
+		h.add("D");
+		h.add("Z");
+		h.add(null);
+		h.add(10);
+		System.out.println(h.add("Z"));
+		System.out.println(h);
+		
+		TreeSet t=new TreeSet();
+		t.add(50);
+		t.add(20);
+		t.add(40);
+		t.add(10);
+		t.add(30);
+		System.out.println(t);
+		SortedSet s1=t.headSet(50);
+		System.out.println(s1);
+		System.out.println(t.tailSet(40));
+		System.out.println(t.subSet(20, 40));
+		
+		TreeSet t1=new TreeSet();
+		t1.add("A");
+		t1.add("a");
+		t1.add("B");
+		t1.add("Z");
+		t1.add("L");
+		//t1.add(new Integer(10));
+		t1.add(new StringBuffer("A"));
+		t1.add(new StringBuffer("Z"));
+		t1.add(new StringBuffer("B"));
+		
+		
+		System.out.println(t1);
+		
+		
+	}
+}
+
+
