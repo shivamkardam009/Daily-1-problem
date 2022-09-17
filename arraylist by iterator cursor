@@ -22,7 +22,32 @@ public class collectionlist {
 		System.out.println();
 		System.out.println(al);
 		
+		ArrayList ls=new ArrayList();
+		ls.add("shivam");
+		ls.add("parth");
+		ls.add("piyush");
+		ls.add("aman");
+		System.out.println(ls);
+		ListIterator litr=ls.listIterator();
+		while(litr.hasNext())
+		{
+			String s=(String)litr.next();
+			if(s.equals("parth"))
+				litr.remove();
+			else if(s.equals("piyush"))
+				litr.add("xyz");
+			else if(s.equals("aman"))
+				litr.add("vinay");
+				
+			
+		}
+		System.out.println(ls);
+		System.out.println(litr.getClass().getName());
+		
+		
 	}
+	
+	
 }
 
 
