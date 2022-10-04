@@ -1,0 +1,44 @@
+package practice;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.WeakHashMap;
+
+public class hashmapexample {
+
+	public static void main(String[] args)throws Exception 
+	{
+    WeakHashMap m=new WeakHashMap();
+		temp t=new temp();
+		m.put(t, "shivam");
+		System.out.println(m);
+		t=null;
+		System.gc();
+		Thread.sleep(5000);
+		System.out.println(m);
+	}
+
+}
+class temp
+{
+	public String toString()
+	{
+		return "temp";
+	}
+	
+	public void finalize()
+	{
+		System.out.println("Finalize method called");
+	}
+}
+
+output: //in case of WeakHashMap object doesn't conatin any refrence it is eligible for GC .Eventhough objet associated with WeakHashMap i.e GC dominates WeakhashMap
+{temp=shivam}
+Finalize method called
+{}
+
+
+output: //in case of HashMap object doesn't conatin any refrence it is not eligible for GC .Eventhough objet associated with HashMap i.e HashMap dominates GC
+{temp=shivam}
+{temp=shivam}
+
