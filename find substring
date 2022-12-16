@@ -1,0 +1,27 @@
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		String str1="abababbbaabbababbbaa";
+		String str2="aabb";
+		int i=0,j=0,k=0,t=-1;
+		for(i=0;i<str1.length();i++)
+		{
+		    k=i;
+		    for(j=0;j<str2.length();j++)
+		    {
+		        if(str1.charAt(k)!=str2.charAt(j))
+		        break;
+		        k++;
+		    }
+		    if(j==str2.length())
+		    {   System.out.println(i);
+		        t=0;
+		        break;
+		    }
+		}
+		if(t==-1)
+		System.out.println(-1);
+		
+	}
+}
